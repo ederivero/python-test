@@ -6,7 +6,6 @@ on:
 jobs:
   build_and_test:
     runs-on: ubuntu-latest
-    container: node:14.16.0-slim
 
     steps:
       - name: Check out the repo
@@ -15,14 +14,11 @@ jobs:
       - name: Checkout python
         uses: actions/setup-python@v2
         with:
-          python-version: "3.9.5"
+          python-version: "3.9"
           architecture: "x64"
-
-      - name: Install OpenSSL
-        run: apt-get -qy update && apt-get -qy install openssl
 
       - name: Install dependencies
         run: pip3 install -r requirements.txt
 
       - name: Run tests
-        run: python3 -m unittes
+        run: python3 -m unittest
