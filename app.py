@@ -3,6 +3,8 @@ from flask_restful import Resource, Api
 
 app = Flask(__name__)
 
+print('un cambio')
+
 
 class Tareas(Resource):
     def get(self):
